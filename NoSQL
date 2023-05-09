@@ -1,0 +1,271 @@
+db.Customer.insertMany([
+{_id:1,cust_id:"c1",cust_name:"Kaif",cust_Email:"kaifaa@gmail.com",
+cust_city:"Delhi",cust_add:"jogabai lane no 2 -Delhi",Order_value:2000,order_date:"2023-1-23",Cust_type:"Premium"},
+{_id:2,cust_id:"c2",cust_name:"riya",cust_Email:"riyaa@gmail.com",
+cust_city:"jhansi",cust_add:"lane no 1 - jhansi",Order_value:3000,order_date:"2023-1-14",Cust_type:"Non Premium"},
+{_id:3,cust_id:"c3",cust_name:"sarika",cust_Email:"sarikaa@gmail.com",
+cust_city:"tambaram",cust_add:"lane no 4 - tambaram",Order_value:4000,order_date:"2023-2-
+20",Cust_type:"Premium"},
+{_id:4,cust_id:"c4",cust_name:"afsha",cust_Email:"zaadi@gmail.com",
+cust_city:"hyderbad",cust_add:"lane no 11,hyderabad",Order_value:5000,order_date:"2023-1-17",Cust_type:"Non
+Premium"}
+])
+db.Product.insertMany([
+{_id:5,product_id:"p1",product_name:"watch",cost:4700,qty:17},
+{_id:6,product_id:"p2",product_name:"boot",cost:470,qty:37},
+{_id:7,product_id:"p3",product_name:"shirt",cost:490,qty:2},
+{_id:8,product_id:"p4",product_name:"laptop",cost:47000,qty:5}
+])
+db.Order.insertMany([
+{_id:9,order_id:"o1",cust_id:"c1",order_status:"delivered",order_date:"2023-01-13"},
+{_id:10,order_id:"o2",cust_id:"c2",order_status:"delivered",order_date:"2023-1-25"},
+{_id:11,order_id:"o3",cust_id:"c2",order_status:"packed",order_date:"2022-7-11"},
+{_id:12,order_id:"o4",cust_id:"c4",order_status:"pending",order_date:"2022-11-09"}
+])
+db.Seller.insertMany([
+{_id:13,seller_id:"s1",seller_name:"affu",seller_city:"mumbai",
+product_sold:7},
+{_id:14,seller_id:"s2",seller_name:"huba",seller_city:"saharanpur",Product_sold:9},
+{_id:15,seller_id:"s3",seller_name:"sachin",seller_city:"agra",product_sold:11},
+{_id:16,seller_id:"s4",seller_name:"rahul",seller_city:"ahmedabad",product_sold:13}
+])
+db.Admin.insertMany([
+{_id:17,Admin_id:"A1",Admin_name:"Sushmita sen",city:"Kolkata",Post:"manager",Salary:34000},
+{_id:18,Admin_id:"A2",Admin_name:"kokila sen",city:"mumbai",Post:"asst manager",Salary:33000},
+{_id:19,Admin_id:"A3",Admin_name:"Sachin gill",city:"delhi",Post:"support engineer",Salary:29000},
+{_id:20,Admin_id:"A4",Admin_name:"katrina kaif",city:"meerut",Post:"account department",Salary:40000}
+])
+db.Cart.insertMany([
+{_id:21,order_id:"o1",product_id:"p1",product_name:"watch",cost:4700,order_date:"2023-01-
+13",cust_id:"c1",cust_add:"jogabai lane no 2 -Delhi",Payment_Details:"via Google Pay"},
+{_id:22,order_id:"o2",product_id:"p2",product_name:"mobile",cost:47000,order_date:"2023-01-
+19",cust_id:"c1",cust_add:"jogabai lane no 2 -Delhi",Payment_Details:"via Google Pay"},
+{_id:23,order_id:"o3",product_id:"p3",product_name:"cooker",cost:1299,order_date:"2023-01-
+23",cust_id:"c2",cust_add:"lane no 1 - jhansi",Payment_Details:"via Google Pay"},
+{_id:24,order_id:"o4",product_id:"p4",product_name:"gloves",cost:699,order_date:"2023-01-
+29",cust_id:"c3",cust_add:"lane no 4 - tambaram",Payment_Details:"via Google Pay"}
+])
+RESULT FROM MONGOSHELL
+db.Admin.find()
+[
+{
+_id: 17,
+Admin_id: 'A1',
+Admin_name: 'Sushmita sen',
+city: 'Kolkata',
+Post: 'manager',
+Salary: 34000
+},
+{
+_id: 18,
+Admin_id: 'A2',
+Admin_name: 'kokila sen',
+city: 'mumbai',
+Post: 'asst manager',
+Salary: 33000
+},
+{
+_id: 19,
+Admin_id: 'A3',
+Admin_name: 'Sachin gill',
+city: 'delhi',
+Post: 'support engineer',
+Salary: 29000
+},
+{
+_id: 20,
+Admin_id: 'A4',
+Admin_name: 'katrina kaif',
+city: 'meerut',
+Post: 'account department',
+Salary: 40000
+}
+]
+Ecommerce> db.Cart.find()
+[
+{
+_id: 21,
+order_id: 'o1',
+product_id: 'p1',
+product_name: 'watch',
+cost: 4700,
+order_date: '2023-01-13',
+cust_id: 'c1',
+cust_add: 'jogabai lane no 2 -Delhi',
+Payment_Details: 'via Google Pay'
+},
+{
+_id: 22,
+order_id: 'o2',
+product_id: 'p2',
+product_name: 'mobile',
+cost: 47000,
+order_date: '2023-01-19',
+cust_id: 'c1',
+cust_add: 'jogabai lane no 2 -Delhi',
+Payment_Details: 'via Google Pay'
+},
+{
+_id: 23,
+order_id: 'o3',
+product_id: 'p3',
+product_name: 'cooker',
+cost: 1299,
+order_date: '2023-01-23',
+cust_id: 'c2',
+cust_add: 'lane no 1 - jhansi',
+Payment_Details: 'via Google Pay'
+},
+{
+_id: 24,
+order_id: 'o4',
+product_id: 'p4',
+product_name: 'gloves',
+cost: 699,
+order_date: '2023-01-29',
+cust_id: 'c3',
+cust_add: 'lane no 4 - tambaram',
+Payment_Details: 'via Google Pay'
+}
+]
+Ecommerce> db.Customer.find()
+[
+{
+_id: 1,
+cust_id: 'c1',
+cust_name: 'Kaif',
+cust_Email: 'kaifaa@gmail.com',
+cust_city: 'Delhi',
+cust_add: 'jogabai lane no 2 -Delhi',
+Order_value: 2000,
+order_date: '2023-1-23',
+Cust_type: 'Premium'
+},
+{
+_id: 2,
+cust_id: 'c2',
+cust_name: 'riya',
+cust_Email: 'riyaa@gmail.com',
+cust_city: 'jhansi',
+cust_add: 'lane no 1 - jhansi',
+Order_value: 3000,
+order_date: '2023-1-14',
+Cust_type: 'Non Premium'
+},
+{
+_id: 3,
+cust_id: 'c3',
+cust_name: 'sarika',
+cust_Email: 'sarikaa@gmail.com',
+cust_city: 'tambaram',
+cust_add: 'lane no 4 - tambaram',
+Order_value: 4000,
+order_date: '2023-2-20',
+Cust_type: 'Premium'
+},
+{
+_id: 4,
+cust_id: 'c4',
+cust_name: 'afsha',
+cust_Email: 'zaadi@gmail.com',
+cust_city: 'hyderbad',
+cust_add: 'lane no 11,hyderabad',
+Order_value: 5000,
+order_date: '2023-1-17',
+Cust_type: 'Non Premium'
+}
+]
+Ecommerce> db.Order.find()
+[
+{
+_id: 9,
+order_id: 'o1',
+cust_id: 'c1',
+order_status: 'delivered',
+order_date: '2023-01-13'
+},
+{
+_id: 10,
+order_id: 'o2',
+cust_id: 'c2',
+order_status: 'delivered',
+order_date: '2023-1-25'
+},
+{
+_id: 11,
+order_id: 'o3',
+cust_id: 'c2',
+order_status: 'packed',
+order_date: '2022-7-11'
+},
+{
+_id: 12,
+order_id: 'o4',
+cust_id: 'c4',
+order_status: 'pending',
+order_date: '2022-11-09'
+}
+]
+Ecommerce> db.Product.find()
+[
+{
+_id: 5,
+product_id: 'p1',
+product_name: 'watch',
+cost: 4700,
+qty: 17
+},
+{
+_id: 6,
+product_id: 'p2',
+product_name: 'boot',
+cost: 470,
+qty: 37
+},
+{
+_id: 7,
+product_id: 'p3',
+product_name: 'shirt',
+cost: 490,
+qty: 2
+},
+{
+_id: 8,
+product_id: 'p4',
+product_name: 'laptop',
+cost: 47000,
+qty: 5
+}
+]
+Ecommerce> db.Seller.find()
+[
+{
+_id: 13,
+seller_id: 's1',
+seller_name: 'affu',
+seller_city: 'mumbai',
+product_sold: 7
+},
+{
+_id: 14,
+seller_id: 's2',
+seller_name: 'huba',
+seller_city: 'saharanpur',
+product_sold: 9
+},
+{
+_id: 15,
+seller_id: 's3',
+seller_name: 'sachin',
+seller_city: 'agra',
+product_sold: 11
+},
+{
+_id: 16,
+seller_id: 's4',
+seller_name: 'rahul',
+seller_city: 'ahmedabad',
+product_sold: 13
+}
+]
+
